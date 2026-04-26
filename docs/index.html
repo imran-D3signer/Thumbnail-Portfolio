@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IMRAN Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800;900&family=Outfit:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+  <header class="page-header page-header--hero">
+    <div class="title-block">
+      <h1 class="main-title">
+        <span class="main-title-line">
+          <span class="main-title-text">IM</span><span class="main-title-accent">R</span><span
+            class="main-title-text">AN</span>
+        </span>
+        <span class="main-title-line"><span class="main-title-text">PORTFOLIO</span></span>
+      </h1>
+    </div>
+
+    <section class="about-section" aria-label="About me">
+      <figure class="about-logo">
+        <img src="IJ logo.jpg" alt="Imran logo" width="320" height="320" loading="eager" />
+      </figure>
+
+      <div class="about-card">
+        <div class="about-heading-wrap">
+          <h3 class="about-heading">ABOUT ME</h3>
+        </div>
+        <p class="about-text">
+          Hi, I'm Imran Jameel — a YouTube thumbnail designer focused on helping creators increase their click-through
+          rates through compelling visuals.
+          I've worked with creators across multiple niches, including all niches, designing thumbnails that are built to
+          perform — not just look good.
+        </p>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <!-- Unified Portfolio Grid -->
+    <section class="portfolio-section" aria-label="Portfolio">
+      <div class="portfolio-grid">
+        <!-- Row 1 -->
+        <div class="portfolio-row">
+          <div class="portfolio-thumb">
+            <img src="photos/cinematic.1.png.png" alt="Cinematic thumbnail 1" loading="lazy" />
+          </div>
+          <div class="portfolio-thumb">
+            <img src="photos/cinematic.2.png.png" alt="Cinematic thumbnail 2" loading="lazy" />
+          </div>
+          <div class="portfolio-thumb">
+            <img src="photos/cinematic.3.png.jpg" alt="Cinematic thumbnail 3" loading="lazy" />
+          </div>
+        </div>
+        <!-- Row 2 -->
+        <div class="portfolio-row">
+          <div class="portfolio-thumb">
+            <img src="photos/Premium Vibe.1.png" alt="Premium Vibe thumbnail 1" loading="lazy" />
+          </div>
+          <div class="portfolio-thumb">
+            <img src="photos/Premium vibe.2.png" alt="Premium Vibe thumbnail 2" loading="lazy" />
+          </div>
+          <div class="portfolio-thumb">
+            <img src="photos/Great Color contrast.1.png" alt="Great Color Contrast thumbnail 1" loading="lazy" />
+          </div>
+        </div>
+        <!-- Row 3 -->
+        <div class="portfolio-row">
+          <div class="portfolio-thumb">
+            <img src="photos/Great Color Contrast.2.png" alt="Great Color Contrast thumbnail 2" loading="lazy" />
+          </div>
+          <div class="portfolio-thumb">
+            <img src="photos/Great Color Contrast.3.png" alt="Great Color Contrast thumbnail 3" loading="lazy" />
+          </div>
+          <div class="portfolio-thumb">
+            <img src="photos/blanket.png" alt="Portfolio thumbnail 9" loading="lazy" />
+          </div>
+        </div>
+        <!-- Row 4 -->
+        <div class="portfolio-row">
+          <div class="portfolio-thumb">
+            <img src="photos/books.2.png" alt="Portfolio thumbnail 10" loading="lazy" />
+          </div>
+          <div class="portfolio-thumb">
+            <img src="photos/chatgpt agent (1).png" alt="Portfolio thumbnail 11" loading="lazy" />
+          </div>
+          <div class="portfolio-thumb">
+            <img src="photos/combo.png" alt="Portfolio thumbnail 12" loading="lazy" />
+          </div>
+        </div>
+        <!-- Row 5 -->
+        <div class="portfolio-row">
+          <div class="portfolio-thumb">
+            <img src="photos/freepik.png" alt="Portfolio thumbnail 13" loading="lazy" />
+          </div>
+          <div class="portfolio-thumb">
+            <img src="photos/neo ai.png" alt="Portfolio thumbnail 14" loading="lazy" />
+          </div>
+          <div class="portfolio-thumb">
+            <img src="photos/time (1).png" alt="Portfolio thumbnail 15" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <div class="footer-contact-item" id="footer-email">
+        <i class="fa-solid fa-envelope"></i>
+        <a href="mailto:ij.thumbnails@gmail.com">ij.thumbnails@gmail.com</a>
+      </div>
+      <div class="footer-contact-item" id="footer-whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <a href="https://wa.me/9232039545621">+923 20 3954562</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (function() {
+      var activeThumb = null;
+      var allThumbs = document.querySelectorAll('.portfolio-thumb');
+
+      function resetAll() {
+        allThumbs.forEach(function(t) {
+          t.classList.remove('active', 'dimmed');
+        });
+      }
+
+      allThumbs.forEach(function(thumb) {
+        thumb.addEventListener('click', function() {
+          if (activeThumb === thumb) {
+            // Clicking the same thumbnail — deactivate
+            resetAll();
+            activeThumb = null;
+          } else {
+            // Clicking a new thumbnail (or first click)
+            resetAll();
+            thumb.classList.add('active');
+            allThumbs.forEach(function(t) {
+              if (t !== thumb) t.classList.add('dimmed');
+            });
+            activeThumb = thumb;
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+
+</html>
